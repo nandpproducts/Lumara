@@ -1,0 +1,287 @@
+:root {
+  color-scheme: light;
+  --bg: #07111f;
+  --surface: rgba(255, 255, 255, 0.95);
+  --surface-strong: #ffffff;
+  --text: #11233d;
+  --muted: #546b82;
+  --accent: #f08a00;
+  --accent-dark: #c96b00;
+  --accent-soft: #fff3e3;
+  --border: rgba(17, 35, 61, 0.08);
+  --shadow: 0 20px 60px rgba(7, 17, 31, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(240, 138, 0, 0.16), transparent 24%),
+    linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-shell {
+  min-height: 100vh;
+}
+
+.hero {
+  padding: 24px 24px 56px;
+  background:
+    linear-gradient(135deg, rgba(7, 17, 31, 0.98), rgba(17, 35, 61, 0.84)),
+    url("lumaranutritionalpagebackground.png") center/cover;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -8% -22% auto;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(240, 138, 0, 0.3), transparent 70%);
+  pointer-events: none;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 32px;
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.77rem;
+  font-weight: 700;
+  color: #ffcb85;
+  margin-bottom: 10px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.2rem, 4.3vw, 3.6rem);
+  line-height: 1.04;
+  margin: 0 0 16px;
+  letter-spacing: -0.03em;
+}
+
+.hero-copy p {
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 620px;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button.primary {
+  background: linear-gradient(135deg, var(--accent), #ffb04d);
+  color: white;
+  box-shadow: 0 14px 30px rgba(240, 138, 0, 0.28);
+}
+
+.button.secondary {
+  background: rgba(255, 255, 255, 0.14);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.hero-card img {
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 56px;
+}
+
+.products,
+.about,
+.cta-band {
+  margin-top: 28px;
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.section-heading h2,
+.about-copy h2,
+.cta-band h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 2.2vw, 1.9rem);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.product-card {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+  box-shadow: 0 10px 30px rgba(17, 35, 61, 0.05);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(17, 35, 61, 0.08);
+}
+
+.product-card img {
+  height: 190px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.product-card p,
+.about-copy p,
+.about-panel li,
+footer p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+}
+
+.about-panel {
+  border-radius: 20px;
+  padding: 22px;
+  background: linear-gradient(135deg, var(--accent-soft), #ffffff);
+  border: 1px solid #ffd39d;
+}
+
+.about-panel h3 {
+  margin-top: 0;
+}
+
+.about-panel ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.cta-band {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #fffaf3, #ffffff);
+}
+
+footer {
+  text-align: center;
+  padding: 0 24px 30px;
+}
+
+@media (max-width: 840px) {
+  .hero-content,
+  .about,
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-band {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 18px 16px 36px;
+  }
+
+  main {
+    padding: 0 16px 32px;
+  }
+
+  .products,
+  .about,
+  .cta-band {
+    padding: 18px;
+  }
+}
